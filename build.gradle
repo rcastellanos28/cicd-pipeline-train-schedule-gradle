@@ -1,9 +1,9 @@
 task createDistZip(type: Zip) {
-    archiveFileName = 'trainSchedule.zip'
-    destinationDirectory = file("${buildDir}/dist")
+    archiveName = 'trainSchedule.zip'
+    destinationDir = file("${buildDir}/dist")
     from 'src'
 }
 
 // Ensure the 'dist' directory is created before the 'createDistZip' task runs
-createDistZip.dependsOn(clean, mkdir("${buildDir}/dist"))
+tasks.createDistZip.dependsOn(clean, mkdir("${buildDir}/dist"))
 
